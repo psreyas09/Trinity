@@ -12,27 +12,27 @@ Features
 Getting Started
 Prerequisites
 
-    Python 3.6 or higher
+Python 3.6 or higher
 
-    A Google API key for Gemini (from Google AI Studio)
+A Google API key for Gemini (from Google AI Studio)
 
 Installation
 
-    Clone the Repository:
+Clone the Repository:
 
-git clone https://github.com/psreyas09/Trinity.git
-cd Trinity
+    git clone https://github.com/psreyas09/Trinity.git
+    cd Trinity
 
 Set Up a Virtual Environment (Recommended):
 
-python -m venv trinity_env
-source trinity_env/bin/activate  # Windows: trinity_env\Scripts\activate
+    python -m venv trinity_env
+    source trinity_env/bin/activate  # Windows: trinity_env\Scripts\activate
 
 Install Required Libraries:
 
 Since there's no requirements.txt, install manually:
 
-pip install google-generativeai
+    pip install google-generativeai
 
 Add Your API Key:
 
