@@ -1,4 +1,4 @@
-Trinity
+#Trinity
 
 Trinity is a terminal-based chatbot powered by Google's Gemini AI, designed to speak in the tone of a royal servant. It provides users with a unique, polite, and conversational AI experience.
 Features
@@ -12,9 +12,9 @@ Features
 Getting Started
 Prerequisites
 
-Python 3.6 or higher
+    Python 3.6 or higher
 
-A Google API key for Gemini (from Google AI Studio)
+    A Google API key for Gemini (get one from Google AI Studio)
 
 Installation
 
@@ -23,35 +23,61 @@ Clone the Repository:
     git clone https://github.com/psreyas09/Trinity.git
     cd Trinity
 
-Set Up a Virtual Environment (Recommended):
+(Optional) Set Up a Virtual Environment:
 
     python -m venv trinity_env
     source trinity_env/bin/activate  # Windows: trinity_env\Scripts\activate
 
 Install Required Libraries:
 
-Since there's no requirements.txt, install manually:
-
     pip install google-generativeai
 
-Add Your API Key:
+Configure the API Key:
 
-In main.py, replace the placeholder with your actual API key:
+There are two ways to provide your Gemini API key:
+🔐 Option 1: Use an Environment Variable (Recommended)
 
-    genai.configure(api_key="YOUR_API_KEY")
+ On Linux/macOS:
 
-Run the Chatbot
+    export GOOGLE_API_KEY="your-api-key-here"
 
-python main.py
+ On Windows CMD:
 
-Start chatting with Trinity directly from your terminal!
+    set GOOGLE_API_KEY=your-api-key-here
+
+ On Windows PowerShell:
+
+    $env:GOOGLE_API_KEY="your-api-key-here"
+
+ In main.py, use:
+
+    import os
+    import google.generativeai as genai
+
+    genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+
+🗂️ Option 2: Hardcode the Key (Not recommended for production)
+
+In main.py, add:
+
+    import google.generativeai as genai
+
+    genai.configure(api_key="your-api-key-here")
+
+⚠️ Do not commit your API key to public repositories!
+
+Running Trinity
+
+    python main.py
+
+Once started, Trinity will begin chatting with you in a royal tone.
 Project Structure
 
 Trinity/
-├── main.py             # Entry point for Trinity chatbot
-├── chat_log.json       # Stores all chat history
-├── README.md           # Project documentation
-└── trinity_env/        # (Optional) Virtual environment directory
+├── main.py             # Main script that runs the chatbot
+├── chat_log.json       # Stores chat history
+├── README.md           # This file
+└── trinity_env/        # (Optional) Virtual environment
 
 License
 
